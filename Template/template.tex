@@ -126,11 +126,17 @@
 % A new command for less cramped nested fractions
 \newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
+% A customized counter to keep track of '<++>TEXT'
+%\newcounter{<++>variable}[section]
+%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>variable}TEXT \the<++>variable}
+
+
 % A special delimiter for bits of code that should be evaluated
 \lstset{escapeinside={<}{>}}
 
 % Changes the heading of the list of listings from 'Listings' to anything the user desires
 %\renewcommand{\lstlistlistingname}{<name>}
+
 
 % A path to the images directory to be imported in the tex document
 \graphicspath{{./Imports/Images/}}
