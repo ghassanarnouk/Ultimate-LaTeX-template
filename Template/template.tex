@@ -23,13 +23,13 @@
 % The complication process using the "draft" option is quicker to run.
 % Delete the "draft" option or replace it with "final" in the final document version.
 
-% Other optinos include: twocolumn, landscape, titlepage, openright, and openany
+% Other optinos include: twocolumn, landscape, titlepage, openright, and openany.
 \documentclass[draft, hidelinks, 12pt, a4paper]{article}
 
 % Solves the error which occurs when user's packages have allocated too many streams - Tex fixed limit is 16
 \usepackage{morewrites}
 
-% Provides a wider range of input encodings using standard mappings.
+% Provides a wider range of input encodings using standard mappings
 \usepackage[utf8]{inputenc}
 
 % Constructs headers and footers
@@ -38,40 +38,55 @@
 % Provides a key-value interface for optional arguments to the \includegraphics command
 \usepackage{graphicx}
 
-% Provides various features to facilitate writing math formulas and to improve the typographical quality of their output.
+% Provides various features to facilitate writing math formulas and to improve the typographical quality of their output
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-% Provides many ways to customize the captions in floating environments like figure and table, and cooperates with many other packages.
+% Provides many ways to customize the captions in floating environments like figure and table, and cooperates with many other packages
 \usepackage{caption}
 
-% Draws diagonal lines and arrows with limits through parts of maths formulas.
+% Draws diagonal lines and arrows with limits through parts of maths formulas
 \usepackage{cancel}
 
-% Provides both foreground and background color management. Also, provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors.
+% Provides both foreground and background color management. Also, provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors
 % dvipsnames - makes the color names for the driver dvips available.
 \usepackage[dvipsnames]{xcolor}
 
-% Supports common layouts for tabular column heads in whole documents, based on one-column tabular environment.
+% Supports common layouts for tabular column heads in whole documents, based on one-column tabular environment
 \usepackage{makecell}
 
 % Provides a simple LaTeX interface for the processing of files with comma separated values (CSV)
 \usepackage{csvsimple}
 
-% Defines a multicols environment which typesets text in multiple columns (up to a max. of 10), and (by default) balances the end of each column at the end of the environment.
+% Defines a multicols environment which typesets text in multiple columns (up to a max. of 10), and (by default) balances the end of each column at the end of the environment
 \usepackage{multicol}
 
-% Provides additional features to existing packages and a consistent interface.
+% Provides additional features to existing packages and a consistent interface
 \usepackage{siunitx}
 
 % Produces hypertext links
-\usepackage{hyperref}
+% pdftex - tex variant that writes PDF directly
+% breaklinks - allow links to break over lines by making links over multiple lines into PDF links to the same to the same target
+% bookmarks - A set of Acrobat bookmarks are written, in a manner similar to the table of contents, requiring two passes of LATEX. 
+% Some postprocessing of the bookmark file (file extension .out) may be needed to translate LATEX codes, since bookmarks must be written in PDFEncoding.
+% To aid this process, the .out file is not rewritten by LATEX if it is edited to contain a line \let\WriteBookmarks\relax
+% bookmarksopen - If Acrobat bookmarks are requested, show them with all the subtrees expanded.
+% bookmarksnumbered - If Acrobat bookmarks are requested, include section numbers.
+% pdfmenubar - make PDF viewer's menu bar visible.
+\usepackage[bookmarks, bookmarksnumbered, bookmarksopen, breaklinks, pdftex, linktoc=all, pdfmenubar]{hyperref}
+\let\WriteBookmarks\relax
+% Setting the title, author, and creator of the PDF
+\hypersetup{pdftitle={<++>},
+            pdfauthor={<++>},
+            pdfcreator={<++>}}
 
 % Enables the user to typeset programs (programming code) within Latex. The source code is read directly and not processed 
 \usepackage{listings}
 
-% References the number of pages in your Latex document through the introduction of a new label which can be referenced to give a reference to the last page of a document.
+% References the number of pages in your Latex document through the introduction of a new label which can be referenced to give a reference to the last page of a document
 \usepackage{lastpage}
+
+
 
 % Selectively include/exclude pieces of text, allowing the user to define new, separately controlled, comment version
 \usepackage{comment}
@@ -90,23 +105,23 @@
 % Language specified is English 
 \usepackage[english]{babel}
 
-% Provides advanced facilities for inline and display quotations.
+% Provides advanced facilities for inline and display quotations
 \usepackage{csquotes}
 
 % Provides various ways of formatting the titles of appendices. Also (sub)appendices environments are provided.
 % titletoc - adds a name (e.g. Appendix) before each appendix listed in the ToC.
-% page - puts a title (e.g. Appendices) into the document at the point where the appendices environment is begun
+% page - puts a title (e.g. Appendices) into the document at the point where the appendices environment is begun.
 \usepackage[page]{appendix}
 
 % Provides an easy and flexible user interface to customize page layout, implementing auto-centering and auto-balancing mechanisms so that the users have only to give the least description for the page layout.
-% includeheadfoot - sets both includehead and includefoot to true
-% margin - sets the margins of the Latex document
+% includeheadfoot - sets both includehead and includefoot to true.
+% margin - sets the margins of the Latex document.
 % Other options:
 % twoside - switches on twoside mode with left and right margins swapped on verso pages.
 % asymmetric - implements a twosided layout in which margins are not swapped on alternate pages (by
 % setting \oddsidemargin to \evensidemargin + bindingoffset) and in which the
-% marginal notes stay always on the same side. This option can be used as an alternative
-% to the twoside option.
+% marginal notes stay always on the same side. 
+% This option can be used as an alternative to the twoside option.
 \usepackage[margin=1in, includeheadfoot]{geometry}
 
 % Formatting bibliography.
@@ -117,8 +132,8 @@
 % Supports acronyms and multiple glossaries, and has provision for operation in several languages.
 \usepackage[debug, toc, section=section, acronym, symbols]{glossaries} 
 
-% Allows the use and import of markdown files 
-% codeSpans - Enable the code span syntax
+% Allows the use and import of markdown files.
+% codeSpans - Enable the code span syntax.
 % [In Progress]
 \usepackage[fencedCode, inlineFootnotes, citations, definitionLists, hashEnumerators, smartEllipses, hybrid, codeSpans]{markdown}
 
@@ -127,8 +142,8 @@
 \newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
 % A customized counter to keep track of '<++>TEXT'
-%\newcounter{<++>variable}[section]
-%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>variable}TEXT \the<++>variable}
+%\newcounter{<++>VARIABLE}[section]
+%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>VARIABLE}TEXT \the<++>VARIABLE}
 
 
 % A special delimiter for bits of code that should be evaluated
