@@ -46,7 +46,9 @@
 \usepackage{caption}
 
 % Draws diagonal lines and arrows with limits through parts of maths formulas
-\usepackage{cancel}
+% thickline - provides heavier lines and arrows
+% makeroom - increases the horizontal spacing to make room for the cancellation value
+\usepackage[thickline, makeroom]{cancel}
 
 % Provides both foreground and background color management. Also, provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors
 % dvipsnames - makes the color names for the driver dvips available.
@@ -141,13 +143,15 @@
 % A new command for less cramped nested fractions
 \newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
-% A customized counter to keep track of '<++>TEXT'
-%\newcounter{<++>VARIABLE}[section]
-%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>VARIABLE}TEXT \the<++>VARIABLE}
-
+% A new command for colored cancellation marks
+\renewcommand{\CancelColor}{\color{red}}
 
 % A special delimiter for bits of code that should be evaluated
 \lstset{escapeinside={<}{>}}
+
+% A customized counter to keep track of '<++>TEXT'
+%\newcounter{<++>VARIABLE}
+%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>VARIABLE}TEXT \the<++>VARIABLE}
 
 % Changes the heading of the list of listings from 'Listings' to anything the user desires
 %\renewcommand{\lstlistlistingname}{<name>}
