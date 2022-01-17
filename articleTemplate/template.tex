@@ -24,7 +24,7 @@
 % Delete the "draft" option or replace it with "final" in the final document version.
 
 % Other optinos include: twocolumn, landscape, titlepage, openright, and openany.
-\documentclass[draft, hidelinks, 12pt, a4paper]{article}
+\documentclass[final, hidelinks, 12pt, a4paper]{article}
 
 % Solves the error which occurs when user's packages have allocated too many streams - Tex fixed limit is 16
 \usepackage{morewrites}
@@ -48,7 +48,7 @@
 % Draws diagonal lines and arrows with limits through parts of maths formulas
 % thickline - provides heavier lines and arrows
 % makeroom - increases the horizontal spacing to make room for the cancellation value
-\usepackage[thickline, makeroom]{cancel}
+\usepackage[thicklines, makeroom]{cancel}
 
 % Provides both foreground and background color management. Also, provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors
 % dvipsnames - makes the color names for the driver dvips available.
