@@ -45,6 +45,9 @@
 % Provides many ways to customize the captions in floating environments like figure and table, and cooperates with many other packages
 \usepackage{caption}
 
+% Allows the use of sub-caption
+\usepackage{subcaption}
+
 % Draws diagonal lines and arrows with limits through parts of maths formulas
 % thickline - provides heavier lines and arrows
 % makeroom - increases the horizontal spacing to make room for the cancellation value
@@ -248,6 +251,7 @@
     \section{<++>}
     \label{sct:<++>}
     <++>
+    \clearpage
 
     % Prints glossaries
     \printglossaries
@@ -267,4 +271,5 @@
     \addappheadtotoc
 
     % Appendices go below here
+
 \end{document}
