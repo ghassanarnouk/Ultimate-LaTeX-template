@@ -143,6 +143,26 @@
 \usepackage[fencedCode, inlineFootnotes, citations, definitionLists, hashEnumerators, smartEllipses, hybrid, codeSpans]{markdown}
 
 
+% Fixes package fancyhdr Warning: \heatheight is too small (12.0pt)
+\setlength{\headheight}{14.49998pt}
+% Makes \topmargin smaller to compensate the change introduced in the previous line
+\addtolength{\topmargin}{-2.49998pt}
+
+
+% A path to the images directory to be imported in the tex document
+\graphicspath{{./Imports/Images/}}
+
+% A path to the bibliography directory to be imported in the tex document
+\addbibresource[location=local]{./Imports/Bibliography/accelerators.bib}
+
+% [In Progress]
+\newglossary[cgls]{constants}{cstog}{cstig}{Constants}
+\makeglossaries
+
+% Changes the page number of titlepage, toc, lot, lof, and lol to roman
+\pagenumbering{roman}
+
+
 % A new command for less cramped nested fractions
 \newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
 
@@ -160,18 +180,6 @@
 %\renewcommand{\lstlistlistingname}{<name>}
 
 
-% A path to the images directory to be imported in the tex document
-\graphicspath{{./Imports/Images/}}
-
-% A path to the bibliography directory to be imported in the tex document
-\addbibresource[location=local]{./Imports/Bibliography/accelerators.bib}
-
-% [In Progress]
-\newglossary[cgls]{constants}{cstog}{cstig}{Constants}
-\makeglossaries
-
-% Changes the page number of titlepage, toc, lot, lof, and lol to roman
-\pagenumbering{roman}
 
 
 %%%%%%%%%%%%%%%%%%%%% Acronyms %%%%%%%%%%%%%%%%%%%%%
