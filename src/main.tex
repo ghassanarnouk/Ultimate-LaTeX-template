@@ -23,6 +23,7 @@
 % The complication process using the "draft" option is quicker to run.
 % Delete the "draft" option or replace it with "final" in the final document version.
 
+
 % Other options include: twocolumn, landscape, titlepage, openright, and openany.
 \documentclass[final, hidelinks, 12pt, a4paper]{article}
 
@@ -72,7 +73,7 @@
 % Produces hypertext links
 % pdftex - tex variant that writes PDF directly
 % breaklinks - allow links to break over lines by making links over multiple lines into PDF links to the same to the same target
-% bookmarks - A set of Acrobat bookmarks are written, in a manner similar to the table of contents, requiring two passes of LATEX. 
+% bookmarks - A set of Acrobat bookmarks are written, in a manner similar to the table of contents, requiring two passes of LATEX.
 % Some postprocessing of the bookmark file (file extension .out) may be needed to translate LATEX codes, since bookmarks must be written in PDFEncoding.
 % To aid this process, the .out file is not rewritten by LATEX if it is edited to contain a line \let\WriteBookmarks\relax
 % bookmarksopen - If Acrobat bookmarks are requested, show them with all the subtrees expanded.
@@ -85,7 +86,7 @@
             pdfauthor={<++>},
             pdfcreator={<++>}}
 
-% Enables the user to typeset programs (programming code) within Latex. The source code is read directly and not processed 
+% Enables the user to typeset programs (programming code) within Latex. The source code is read directly and not processed
 \usepackage{listings}
 
 % References the number of pages in your Latex document through the introduction of a new label which can be referenced to give a reference to the last page of a document
@@ -107,7 +108,7 @@
 \usepackage{enumerate}
 
 % Manages culturally-determined typographical (and other) rules for a wide range of languages.
-% Language specified is English 
+% Language specified is English
 \usepackage[english]{babel}
 
 % Provides advanced facilities for inline and display quotations
@@ -143,7 +144,7 @@
 % twoside - switches on twoside mode with left and right margins swapped on verso pages.
 % asymmetric - implements a twosided layout in which margins are not swapped on alternate pages (by
 % setting \oddsidemargin to \evensidemargin + bindingoffset) and in which the
-% marginal notes stay always on the same side. 
+% marginal notes stay always on the same side.
 % This option can be used as an alternative to the twoside option.
 \usepackage[margin=1in, includeheadfoot]{geometry}
 
@@ -153,7 +154,7 @@
 \usepackage[style=ieee, backend=biber]{biblatex}
 
 % Supports acronyms and multiple glossaries, and has provision for operation in several languages.
-\usepackage[debug, toc, section=section, acronym, symbols]{glossaries} 
+\usepackage[debug, toc, section=section, acronym, symbols]{glossaries}
 
 % Allows the use and import of markdown files.
 % codeSpans - Enable the code span syntax.
@@ -240,7 +241,7 @@
             \vspace{1.5cm}
             {\large {\bfseries <++>}}\\
             {\large {\bfseries <++>}}\\
-            
+
             % Course code, Term, Lab # Report
             \vspace{1cm}
             {\large <++>}\\
@@ -263,8 +264,7 @@
             \vspace{1cm}
             {\bfseries Day Submitted:} \today\\
     	\end{center}
-    \end{titlepage} 
-
+    \end{titlepage}
 
     % Prints table of content, update and maintain it automatically
     \tableofcontents
@@ -273,7 +273,7 @@
     % Prints list of tables, update and maintain it automatically
     \listoftables
     \clearpage
-    
+
     % Prints list of figures, update and maintain it automatically
     \listoffigures
     \clearpage
@@ -282,20 +282,18 @@
     \lstlistoflistings
     \clearpage
 
-
     % Defines page style, header, and footer
     \pagestyle{fancy}
     % Student name & student no.
     \lhead{<++>}
     % Lab report title
     \rhead{<++>}
-    \rfoot{Page \thepage\ of \pageref{LastPage}} 
+    \rfoot{Page \thepage\ of \pageref{LastPage}}
     % Hides page number in the middle of the footer
     \cfoot{}
 
     % Changes the page numbering of the document back to Arabic
     \pagenumbering{arabic}
-
 
     % First section goes here
     \section{<++>}
@@ -305,17 +303,15 @@
 
     % Prints glossaries
     \printglossaries
-    % Prints all (used and unused) glossaries 
+    % Prints all (used and unused) glossaries
     \glsaddallunused
     \clearpage
-   
 
     % Prints bibliography
     \printbibliography
     \clearpage
 
-
-    % Prevents a page number in the toc next to Appendices 
+    % Prevents a page number in the toc next to Appendices
     \noappendicestocpagenum
     % Inserts appendix heading into the toc
     \addappheadtotoc
