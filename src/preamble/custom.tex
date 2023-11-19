@@ -1,0 +1,43 @@
+% Fixes package fancyhdr Warning: \heatheight is too small (12.0pt)
+\setlength{\headheight}{14.49998pt}
+% Makes \topmargin smaller to compensate the change introduced in the previous line
+\addtolength{\topmargin}{-2.49998pt}
+
+
+% A path to the images directory to be imported in the tex document
+\graphicspath{{./Imports/Images/}}
+
+% A path to the bibliography directory to be imported in the tex document
+\addbibresource[location=local]{./Imports/Bibliography/accelerators.bib}
+
+% Add constants list using glossary
+\newglossary[cgls]{constants}{cstog}{cstig}{Constants}
+% Alphabetize glossary and acronyms list
+\makeglossaries
+
+
+% Changes the page number of titlepage, toc, lot, lof, and lol to roman
+\pagenumbering{roman}
+
+
+% A new command for less cramped nested fractions
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+% A new command for colored cancellation marks
+\renewcommand{\CancelColor}{\color{red}}
+
+% Define the background colors of a block of code
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+% Use the line below to bold \SI{}{} commands
+\sisetup{detect-all=true}
+
+% A special delimiter for bits of code that should be evaluated
+\lstset{escapeinside={<}{>}}
+
+% A customized counter to keep track of '<++>TEXT'
+%\newcounter{<++>VARIABLE}
+%\newcommand\<++>THENEWCOMMAND{\stepcounter{<++>VARIABLE}TEXT \the<++>VARIABLE}
+
+% Changes the heading of the list of listings from 'Listings' to anything the user desires
+%\renewcommand{\lstlistlistingname}{<name>}
