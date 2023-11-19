@@ -4,6 +4,7 @@
 % arara: biber
 % arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes }
 % arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes } if !unchanged('tex')
+% TODO: add a check if file exists before deleting
 % arara: clean: { extensions: [ aux ] }
 % arara: clean: { extensions: [ log ] }
 % arara: clean: { extensions: [ acn ] }
@@ -58,91 +59,32 @@
 
 % The document starts here!!
 \begin{document}
-    \begin{titlepage}
-        \begin{center}
-        	\vspace{1cm}
-            % Lab report title
-            {\LARGE{\bfseries <++>}}\\
 
-            % Student name & student no.
-            \vspace{1.5cm}
-            {\large {\bfseries <++>}}\\
-            {\large {\bfseries <++>}}\\
-
-            % Course code, Term, Lab # Report
-            \vspace{1cm}
-            {\large <++>}\\
-            {\large <++>}\\
-            {\large <++>}\\
-
-            % Instructor
-            \vspace{2cm}
-            {\bfseries Instructor:} <++>\\
-
-            % Lab period or lab section
-            \vspace{1cm}
-            {\bfseries Lab Period:} <++>\\
-
-            % Day performed
-            \vspace{0.1cm}
-            {\bfseries Day Performed:} <++>\\
-
-            % Day submitted
-            \vspace{1cm}
-            {\bfseries Day Submitted:} \today\\
-    	\end{center}
-    \end{titlepage}
-
-    % Prints table of content, update and maintain it automatically
-    \tableofcontents
+    \tableofcontents%
+    \clearpage
+    \listoftables%
+    \clearpage
+    \listoffigures%
+    \clearpage
+    \lstlistoflistings%
     \clearpage
 
-    % Prints list of tables, update and maintain it automatically
-    \listoftables
+    \pagestyle{fancy}           % defines page style, header, and footer
+    \lhead{<++>}                % student name & student no.
+    \rhead{<++>}                % lab report title
+    \rfoot{Page \thepage\ of\ \pageref{LastPage}}
+    \cfoot{}                    % hides page number in the middle of the footer
+    \pagenumbering{arabic}      % changes the page numbering of the document back to Arabic
+
+    % content goes below here
+
+
+    \printglossaries%
+    \glsaddallunused%       prints all (used and unused) glossaries
     \clearpage
-
-    % Prints list of figures, update and maintain it automatically
-    \listoffigures
+    \printbibliography%
     \clearpage
-
-    % Prints list of listings, update and maintain it automatically
-    \lstlistoflistings
-    \clearpage
-
-    % Defines page style, header, and footer
-    \pagestyle{fancy}
-    % Student name & student no.
-    \lhead{<++>}
-    % Lab report title
-    \rhead{<++>}
-    \rfoot{Page \thepage\ of \pageref{LastPage}}
-    % Hides page number in the middle of the footer
-    \cfoot{}
-
-    % Changes the page numbering of the document back to Arabic
-    \pagenumbering{arabic}
-
-    % First section goes here
-    \section{<++>}
-    \label{sct:<++>}
-    <++>
-    \clearpage
-
-    % Prints glossaries
-    \printglossaries
-    % Prints all (used and unused) glossaries
-    \glsaddallunused
-    \clearpage
-
-    % Prints bibliography
-    \printbibliography
-    \clearpage
-
-    % Prevents a page number in the toc next to Appendices
-    \noappendicestocpagenum
-    % Inserts appendix heading into the toc
-    \addappheadtotoc
-
-    % Appendices go below here
-
+    \noappendicestocpagenum%            prevents a page number in the toc next to Appendices
+    \addappheadtotoc%                   inserts appendix heading into the toc
+    \input{content/appendices.tex}      % TODO: turn this into a subfile document
 \end{document}
