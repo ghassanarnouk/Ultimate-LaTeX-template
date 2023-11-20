@@ -41,23 +41,19 @@
 
 
 %%%%%%%%%%%%%%%%%%%% Glossaries %%%%%%%%%%%%%%%%%%%%
-% Glossaries go here
-\input{glossaries/glossary.tex}
+\input{preamble/glossary.tex}
 
 %%%%%%%%%%%%%%%%%%%%% Acronyms %%%%%%%%%%%%%%%%%%%%%
-% Acronyms go here
-\input{glossaries/acronyms.tex}
+\input{preamble/acronyms.tex}
 
 %%%%%%%%%%%%%%%%%%%%% Symbols %%%%%%%%%%%%%%%%%%%%%%
-% Symbols go here
-\input{glossaries/symbols.tex}
+\input{preamble/symbols.tex}
 
 %%%%%%%%%%%%%%%%%%%% Constants %%%%%%%%%%%%%%%%%%%%%
-% Constants go here
-\input{glossaries/constants.tex}
+\input{preamble/constants.tex}
 
 
-% The document starts here!!
+%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
     \tableofcontents%
@@ -86,5 +82,5 @@
     \clearpage
     \noappendicestocpagenum%            prevents a page number in the toc next to Appendices
     \addappheadtotoc%                   inserts appendix heading into the toc
-    \input{content/appendices.tex}      % TODO: turn this into a subfile document
+    \input{content/appendices.tex}      % TODO: turn this into a sub-file document
 \end{document}
