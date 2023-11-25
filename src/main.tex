@@ -1,0 +1,83 @@
+% arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes }
+% arara: makeglossaries
+% arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes }
+% arara: biber
+% arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes }
+% arara: pdflatex: { synctex: on, interaction: nonstopmode, shell: yes } if !unchanged('tex')
+% TODO: add a check if file exists before deleting
+% arara: clean: { extensions: [ aux ] }
+% arara: clean: { extensions: [ log ] }
+% arara: clean: { extensions: [ acn ] }
+% arara: clean: { extensions: [ acr ] }
+% arara: clean: { extensions: [ alg ] }
+% arara: clean: { extensions: [ bbl ] }
+% arara: clean: { extensions: [ bcf ] }
+% arara: clean: { extensions: [ blg ] }
+% arara: clean: { extensions: [ cgls ] }
+% arara: clean: { extensions: [ cstig ] }
+% arara: clean: { extensions: [ cstog ] }
+% arara: clean: { extensions: [ fdb_latexmk ] }
+% arara: clean: { extensions: [ fls ] }
+% arara: clean: { extensions: [ glg ] }
+% arara: clean: { extensions: [ glo ] }
+% arara: clean: { extensions: [ gls ] }
+% arara: clean: { extensions: [ ist ] }
+% arara: clean: { extensions: [ lof ] }
+% arara: clean: { extensions: [ lol ] }
+% arara: clean: { extensions: [ mw ] }
+% arara: clean: { extensions: [ out ] }
+% arara: clean: { extensions: [ run.xml ] }
+% arara: clean: { extensions: [ slg ] }
+% arara: clean: { extensions: [ slo ] }
+% arara: clean: { extensions: [ sls ] }
+% arara: clean: { extensions: [ synctex.gz ] }
+% arara: clean: { extensions: [ toc ] }
+
+%%%%%%%%%%%%%%%%%%%% Packages %%%%%%%%%%%%%%%%%%%%
+\input{preamble/packages.tex}
+
+%%%%%%%%%%%%%%%%% Custom config %%%%%%%%%%%%%%%%%%
+\input{preamble/custom.tex}
+
+
+%%%%%%%%%%%%%%%%%%%% Glossaries %%%%%%%%%%%%%%%%%%%%
+\input{preamble/glossary.tex}
+
+%%%%%%%%%%%%%%%%%%%%% Acronyms %%%%%%%%%%%%%%%%%%%%%
+\input{preamble/acronyms.tex}
+
+%%%%%%%%%%%%%%%%%%%%% Symbols %%%%%%%%%%%%%%%%%%%%%%
+\input{preamble/symbols.tex}
+
+%%%%%%%%%%%%%%%%%%%% Constants %%%%%%%%%%%%%%%%%%%%%
+\input{preamble/constants.tex}
+
+
+%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    \tableofcontents\clearpage%
+    \listoftables\clearpage%
+    \listoffigures\clearpage%
+    \lstlistoflistings\clearpage%
+
+    \pagestyle{fancy}           % defines page style, header, and footer
+    \lhead{<++>}                % student name & student no.
+    \rhead{<++>}                % lab report title
+    % TODO: debug LastPage
+    \rfoot{}%{Page \thepage\ of\ \pageref{LastPage}}
+    \cfoot{}                    % hides page number in the middle of the footer
+    \pagenumbering{arabic}      % changes the page numbering of the document back to Arabic (changed in custom.tex)
+
+    % content goes below here
+
+
+    \printglossaries%
+    \glsaddallunused%       prints all (used and unused) glossaries
+    \clearpage
+    \printbibliography%
+    \clearpage
+    \noappendicestocpagenum%            prevents a page number in the toc next to Appendices
+    \addappheadtotoc%                   inserts appendix heading into the toc
+    \input{content/appendices.tex}      % TODO: turn this into a sub-file document
+\end{document}
