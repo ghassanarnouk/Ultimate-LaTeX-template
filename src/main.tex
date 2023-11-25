@@ -56,21 +56,18 @@
 %%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-    \tableofcontents%
-    \clearpage
-    \listoftables%
-    \clearpage
-    \listoffigures%
-    \clearpage
-    \lstlistoflistings%
-    \clearpage
+    \tableofcontents\clearpage%
+    \listoftables\clearpage%
+    \listoffigures\clearpage%
+    \lstlistoflistings\clearpage%
 
     \pagestyle{fancy}           % defines page style, header, and footer
     \lhead{<++>}                % student name & student no.
     \rhead{<++>}                % lab report title
-    \rfoot{Page \thepage\ of\ \pageref{LastPage}}
+    % TODO: debug LastPage
+    \rfoot{}%{Page \thepage\ of\ \pageref{LastPage}}
     \cfoot{}                    % hides page number in the middle of the footer
-    \pagenumbering{arabic}      % changes the page numbering of the document back to Arabic
+    \pagenumbering{arabic}      % changes the page numbering of the document back to Arabic (changed in custom.tex)
 
     % content goes below here
 
